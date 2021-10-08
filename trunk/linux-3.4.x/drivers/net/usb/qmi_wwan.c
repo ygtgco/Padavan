@@ -516,7 +516,7 @@ next_desc:
 	dev->net->netdev_ops = &qmi_wwan_netdev_ops;
 	dev->net->sysfs_groups[0] = &qmi_wwan_sysfs_attr_group;
 #if 1 //Added by Quectel
-	if (dev->udev->descriptor.idVendor == cpu_to_le16(0x2020) {
+	if (dev->udev->descriptor.idVendor == cpu_to_le16(0x2020)) {
 		dev_info(&intf->dev,  "work on RawIP mode\n");
 		dev->net->flags |= IFF_NOARP;
 		usb_control_msg(
