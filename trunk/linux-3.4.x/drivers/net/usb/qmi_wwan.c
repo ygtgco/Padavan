@@ -177,7 +177,7 @@ static const u8 buggy_fw_addr[ETH_ALEN] = {0x00, 0xa0, 0xc6, 0x00, 0x00, 0x00};
  */
 struct sk_buff *qmi_wwan_tx_fixup(struct usbnet *dev, struct sk_buff *skb, gfp_t flags)
 {
-	if (dev->udev->descriptor.idVendor != cpu_to_le16(0x2C7C)) return skb;
+	if (dev->udev->descriptor.idVendor != cpu_to_le16(0x2020)) return skb;
 	
 	// Skip Ethernet header from message
 	if (skb_pull(skb, ETH_HLEN)) {
@@ -516,8 +516,8 @@ next_desc:
 	dev->net->netdev_ops = &qmi_wwan_netdev_ops;
 	dev->net->sysfs_groups[0] = &qmi_wwan_sysfs_attr_group;
 #if 1 //Added by Quectel
-	if (dev->udev->descriptor.idVendor == cpu_to_le16(0x2C7C)) {
-		dev_info(&intf->dev,  "Quectel  EC25&EC21&EC20R2.0&EG91&EG95&EG06&EP06&EM06&BG96 work on RawIP mode\n");
+	if (dev->udev->descriptor.idVendor == cpu_to_le16(0x2020) {
+		dev_info(&intf->dev,  "work on RawIP mode\n");
 		dev->net->flags |= IFF_NOARP;
 		usb_control_msg(
 			interface_to_usbdev(intf),
