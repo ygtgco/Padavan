@@ -136,6 +136,7 @@ dir_y							+= 802.1x
 dir_y							+= wpa_supplicant
 dir_y							+= pppd
 dir_y							+= pppoe
+dir_y   	                                	+= minidlna
 dir_y							+= xl2tpd
 dir_$(CONFIG_FIRMWARE_INCLUDE_RPL2TP)			+= rp-l2tp
 dir_y							+= lldt
@@ -224,7 +225,7 @@ dir_$(FS_FAT_ENABLED)					+= dosfstools
 dir_$(FS_NTFS_ENABLED)					+= ntfs-3g
 dir_$(CONFIG_FIRMWARE_INCLUDE_PARTED)			+= parted
 dir_$(CONFIG_FIRMWARE_INCLUDE_FTPD)			+= vsftpd
-dir_y   	                                	+= minidlna
+
 dir_$(CONFIG_FIRMWARE_INCLUDE_FIREFLY)			+= firefly
 dir_$(CONFIG_FIRMWARE_INCLUDE_TRANSMISSION)		+= transmission
 dir_$(ARIA2_ENABLED)					+= aria2
